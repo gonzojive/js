@@ -1,7 +1,5 @@
 (in-package :js)
 
-(defmacro !this () 'js-user::|this|)
-
 ;; Float special values
 
 #+sbcl
@@ -74,7 +72,7 @@
   (wrap-js-lambda args body))
 
 ;;
-(defmacro !eval (str) ;;todo translate-ast temporary removed
+(defmacro js-eval (str) ;;todo translate-ast temporary removed
   `(wrap-js ,(translate-ast (parse-js-string str))))
 
 (defun compile-eval (code)
